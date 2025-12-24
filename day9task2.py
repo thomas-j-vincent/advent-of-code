@@ -1,56 +1,66 @@
-import shapely
-from shapely import LineString, Point, Polygon
+# Day9B - coordinate compression, matrix approach.
+import pandas as pd
+import numpy as np
 
-class day_09:
+D9 = pd.read_csv('day9inputtedvalues.txt', header=None)
 
-    def __init__(self):
-        self.coords = []
-        self.max_area = 0
+unique = np.unique(D9[[0, 1]])
+factors = np.arange(len(unique))
 
-    def open_and_store(self):
+D9[[0, 1]] = D9[[0, 1]].replace(unique, factors)
 
-        self.path = 'C:\\Users\\thoma\\OneDrive\\Documents\\GitHub\\adventOfCode\\day9inputtedvalues.txt' \
-        ''
+x = list(D9[0])
+y = list(D9[1])
 
-        with open(self.path, 'r') as file:
-            for row in file:
-                row = list(str(row.replace('\n', '')).split(','))
-                row = [ int(i) for i in row ]
-                self.coords.append(row)
+s = np.zeros((max(y)+1, max(x)+1), dtype=np.uint8)
 
-    def calc_area(self,a,b):
-        c = abs(b[0]-a[0])+1
-        d = abs(b[1]-a[1])+1
-        return c*d
+for i in range(len(D9)):
+    s[y[i]][x[i]] = 1
 
-    def find_biggest_area(self):
+for i in range(len(D9)):
+    for j in range(len(D9)):
+        if i != j:
+            if x[i] == x[j]:
+                for k in range(y[i], y[j]+1):
+                    s[k][x[i]] = 1
+            if y[i] == y[j]:
+                for k in range(x[i], x[j]+1):
+                    s[y[i]][k] = 1
 
-        coords = []
+for i in range(len(s)):
+    border = []
+    for j in range(s.shape[1]):
+        if s[i][j] != 0:
+            border.append(j)
+    if len(border) >= 2:
+        for j in range(min(border), max(border) + 1):
+            if s[i][j] == 0:
+                s[i][j] = 1
+m = []
 
-        for k in self.coords:
-            coords.append((float(k[0]), float(k[1])))
+for i in range(len(D9)):
+    for j in range(i+1, len(D9)):
+        x2 = max(x[i], x[j])
+        y2 = max(y[i], y[j])
+        x1 = min(x[i], x[j])
+        y1 = min(y[i], y[j])
+        
+        if x1 == x2 or y1 == y2:
+            continue
+            
+        n = (1 + unique[x2] - unique[x1]) * (1 + unique[y2] -unique[y1])
+        m.append((x1,y1,x2,y2,n))
 
-        area_full = Polygon(coords)
+m = sorted(m, key=lambda x:x[-1], reverse = True)
 
-        for i in range(len(self.coords)):
-            coords_i = self.coords[i]
-            for j in range(1,len(self.coords)):
+p1 = max(m[:][4])
 
-                coords_j = self.coords[j]
-                area_partly = Polygon([(coords_i[0],coords_j[1]), (coords_j[0], coords_j[1]), (coords_j[0],coords_i[1]), (coords_i[0],coords_i[1]) ])
+for i in range(len(m)):
+    r = [row[m[i][0]:m[i][2]+1] for row in s[m[i][1]:m[i][3]+1]]
+    if any(0 in j for j in r):
+        continue
+    else:
+        p2 = m[i][4]
+        break
 
-                if shapely.within(area_partly,area_full):
-                    temp = self.calc_area(coords_i, coords_j)
-                    if self.max_area < temp:
-                        self.max_area = temp
-
-def main() -> None:
-
-    day = day_09()
-    day.open_and_store()
-    day.find_biggest_area()
-
-    print(day.max_area)
-
-if __name__ == '__main__':
-    main()
+print(p1,p2)
