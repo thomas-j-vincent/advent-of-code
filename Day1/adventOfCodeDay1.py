@@ -1,9 +1,13 @@
 # import numbers
-with open("AdventOfCodeDay1FormattedValues.txt", "r") as file:
-    text = file.read().strip()
+values = []
 
+with open("Day1Input.txt", "r") as file:
+    for line in file: # read file line by line
+        values.append(line.strip())
 
-numbers = [v.strip('"') for v in text.split(",")]
+    formatted = ",".join(f'"{v}"' for v in values) # format file
+
+numbers = [v.strip('"') for v in formatted.split(",")]
 #numbers = ["L68","L30","R48","L5","R60","L55","L1","L99","R14","L82"]
 currentValue = 50
 zeroOccurences = 0
@@ -13,6 +17,7 @@ def isZero(currentValue, zeroOccurences):
         zeroOccurences += 1     # add one to 0 occurences
         txtB = f" isZero, occurences: {zeroOccurences}"
         print(txtB)
+        #print(f" isZero, occurences: {zeroOccurences}")
     return(zeroOccurences)
 
 def isMaxOrMin(currentValue, zeroOccurences):

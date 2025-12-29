@@ -1,63 +1,43 @@
 # import numbers
-with open("FormattedValues.txt", "r") as file:
-    text = file.read().strip()
+values = []
 
-# Example list. Replace with: numbers = text.split(",")
+with open("Day1Input.txt", "r") as file:
+    for line in file: # read file line by line
+        values.append(line.strip())
+
+    formatted = ",".join(f'"{v}"' for v in values) # format file
+
+numbers = [v.strip('"') for v in formatted.split(",")]
 #numbers = ["L68","L30","R48","L5","R60","L55","L1","L99","R14","L82"]
-numbers = [v.strip('"') for v in text.split(",")]
-
 currentValue = 50
 zeroOccurences = 0
 
-
-# === Helper Functions ===
-
 def isZero(currentValue, zeroOccurences):
-    """Counts whenever the number lands exactly on 0."""
-    if currentValue == 0:
-        zeroOccurences += 1
-        #print(f"Hit ZERO! Total zero crossings: {zeroOccurences}")
-    return zeroOccurences
+    if currentValue == 0:     #if number equals 0 
+        zeroOccurences += 1     # add one to 0 occurences
+    return(zeroOccurences)
 
+def isMaxOrMin(currentValue,movement, zeroOccurences):
 
-def applyMovement(currentValue, movement, zeroOccurences):
-    """
-    Moves one step at a time, wrapping correctly, and counting zero crossings.
-    Example:
-       movement = -68 → move left (decrease) 68 times.
-    """
     step = 1 if movement > 0 else -1
 
-    for _ in range(abs(movement)):
+    for i in range(abs(movement)): #abs takes out the + or - sign
         currentValue += step
-
-        # Wrap around behaviour
-        if currentValue > 99:
-            currentValue = 0
-        elif currentValue < 0:
-            currentValue = 99
+        if currentValue > 99: #if currentValue > 99
+            currentValue = (currentValue - 100)# -99 (-100)
+        elif currentValue < 0: #if currentValue < 0
+            currentValue = (currentValue + 100)# +99 (+100)
 
         zeroOccurences = isZero(currentValue, zeroOccurences)
 
     return currentValue, zeroOccurences
 
-
-# === MAIN LOOP ===
-
-for instr in numbers:
-    direction = instr[0]
-    value = int(instr[1:])
+for i in numbers:
+    direction = i[0]
+    value = int(i[1:])
 
     movement = -value if direction == "L" else value
-
-    #print(f"\nInstruction: {instr}")
-    #print(f"Moving {'LEFT' if movement < 0 else 'RIGHT'} by {abs(movement)}")
-
-    currentValue, zeroOccurences = applyMovement(currentValue, movement, zeroOccurences)
-
-    #print(f"Position after move: {currentValue}")
+    currentValue, zeroOccurences = isMaxOrMin(currentValue,movement, zeroOccurences)
 
 
-print("\n================================")
-print("FINAL ZERO CROSSINGS:", zeroOccurences)
-print("================================")
+print(zeroOccurences)
