@@ -1,4 +1,3 @@
-# import numbers
 values = []
 
 with open("Day1Input.txt", "r") as file:
