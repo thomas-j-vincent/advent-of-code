@@ -37,4 +37,9 @@ entirely.
 The last way I made my program more efficient was by trying to reduce the line usage without impacting readability. I only did this in one case by replacing
  "temporaryTotal = str(maxValue) + str(minValue) temporaryTotal = int(temporaryTotal)" with just "temporaryTotal = int(str(maxValue) + str(minValue))"
 
+Task 2:
 
+In task two instead of the largest combination of two digits we need to find the largest combination of 12 digits:
+My first idea was to repeat the loop used for finding the first two values another ten times, making up the other digits however, this would've been very
+slow so I chose another method. Instead I chose to put all of the characters from a line into a list, determine the amount I have to remove, and then
+whilst the previous number is larger than the current number it removes the current number to end up with the largest possible twelve digit number.
