@@ -47,4 +47,21 @@ I did this by attempting to decrease the amount of loops or functions called, as
 The first way I did this was to remove the check_odd_even function, instead choosing to use the modulus operator outside it. 
 I then removed the entire loop when checking if the number is divisable by 11, as we do that functionality later anyway.
 I also removed the segment that checks is the values are above the minimum and below the maximum, as that we can just check each number individually
-Finally I skipped reassembling the halves as that value was the same as the "value" string from earlier which we use in the allMatch loop to add to the total. 
+Finally I skipped reassembling the halves as that value was the same as the "value" string from earlier which we use in the allMatch loop to add to the total.
+
+Task 2: 
+
+In task 2 it was discovered that invalid IDs could also be singular digit repeating numbers such as 111
+
+ Explaining the code from top to bottom: 
+
+In the second task I attempted to remove the for i in numbers for loop by creating another list containing the start and end values from the ranges instead.
+This reduces the amount of loops the code has to go to and therefore speeds up the program, I attempted to do this with the previous task however,
+I structured the entire code around this loop, with no way to determine between start and end values from different ranges and therefore kept it the same.
+
+For the function generate_invalid_IDs I used the function from someones solution found on reddit (I can't find their name) but this is the way it works and
+how I optimised it for purpose of only solving the second task:
+The first line finds the total length of the highest number possible by taking the max_value (passed to the function), finding its lenght and then 
+converting it to an integer
+The person then chooses to store all the invalid numbers in the range, and can therefore pass that back to the program as a list to iterate through, this
+works better than my system as i 

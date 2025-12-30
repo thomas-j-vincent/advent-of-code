@@ -1,9 +1,12 @@
-import re
-# import numbers
-with open("AdventOfCodeDay2FormattedValues.txt", "r") as file:
+with open("Day2Input.txt", "r") as file:
     text = file.read().strip()
 
-ranges = [v.strip('"') for v in text.split(",")]
+numbers = []
+for v in text.split(","):
+    v = v.strip('"')
+    start, end = v.split("-")
+    numbers.append((int(start), int(end)))
+
 def generate_invalid_ids(max_value, part2=False):
     """
     Generates all invalid IDs up to max_value.
@@ -15,16 +18,13 @@ def generate_invalid_ids(max_value, part2=False):
 
     for L in range(2, max_digits + 1):   # total length of number
         for d in range(1, L // 2 + 1):   # base length
-            if L % d != 0:
+            if L % d != 0:               # if the length of the number has a remainder when divided by 
                 continue
 
             t = L // d   # number of repeats
 
-            # Part 1 requires exactly 2 repeats, Part 2 requires ≥2
-            if not part2 and t != 2:
-                continue
-            if part2 and t < 2:
-                continue
+            ##if part2 and t < 2:
+              #  continue
 
             start = 10**(d - 1)
             end = 10**d - 1
@@ -56,8 +56,4 @@ def solve_ranges(ranges, part2=False):
 
     return total
 
-
-print("Part 1 =", solve_ranges(ranges, part2=False))
-
-
-print("Part 2 =", solve_ranges(ranges, part2=True))
+print("Part 2 =", solve_ranges(numbers, part2=True))
