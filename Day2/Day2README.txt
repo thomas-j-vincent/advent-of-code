@@ -61,7 +61,28 @@ I structured the entire code around this loop, with no way to determine between 
 
 For the function generate_invalid_IDs I used the function from someones solution found on reddit (I can't find their name) but this is the way it works and
 how I optimised it for purpose of only solving the second task:
-The first line finds the total length of the highest number possible by taking the max_value (passed to the function), finding its lenght and then 
-converting it to an integer
-The person then chooses to store all the invalid numbers in the range, and can therefore pass that back to the program as a list to iterate through, this
-works better than my system as i 
+The first line finds the total length of the highest number possible by taking the max_value (passed to the function), finding its lenght and then
+converting it to an integer. All the invalid numbers in the range are stored as a set so it can be passed back to the program to iterate through.this works
+better than my system as it means the program doesn't have to find all the invalid IDs each time, only once for each range (speeding up the program).They
+then enter a for loop to iterate through the length of the number, starting at the second value, as the first digit is used to compare against the others-
+it has to be valid. For each number length d is used to calculate possible repeating sections ie. for an eight digit number d would be 1, 2, 4. If a the
+length of the number has a remainder when divided by d, that d value is skipped as there can be no repeating sections for a number of that length
+ie. d=3 and L= 8, 8 cannot have repeating sections of 3. t is the amount of times the section has to repeat to fill the number of that length
+ie. if d=4 L=8 t=2. The if loop "if part 2 and t < 2:" was intended to ensure that the repeating section always repeats at least once, and can therefore be
+removed to increase the program speed. Start and End are then created as the highest and lowest possible numbers. From this range it loops through from the
+lowest number to the highest, taking the current value and multiplying it by the times it has to be repeated for that d value. If the number created from
+that function is greater than the maximum value it stops the loop, otherwise it adds the number to the invalid ID set.
+This set is then returned.
+
+For the funtion solve_ranges I also used a solution found on reddit, this is how it works:
+The first line finds the maximum value in each range, we then call the generate_invalid_IDs function to return the list of invalid IDs, total is then
+declared as zero, which will be added to find the ultimate answer. The for loop loops through the invalid IDs and for each number in the range as long is
+between the maximum and minimum for that function, gets added to the total. The loop is then broken out of to ensure there is no double counting.
+Total is then returned.
+
+The answer is then printed.
+
+Maximising efficiency:
+
+The code given was initially to solve both the first and second task, as that was not required I first removed where the part2 argument was passed, and
+defaulted it to true. I also removed the "if part2 and t < 2:" loop as part true is always true as is t < 2. 
