@@ -1,4 +1,4 @@
-with open("AdventOfCodeDay3FormattedValues.txt", "r") as file:
+with open("Day3Input.txt", "r") as file:
     text = file.read().strip()
 
 text = text.replace("\n", ",")
