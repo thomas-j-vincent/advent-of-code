@@ -2,6 +2,8 @@ Day 3:
 
 Task 1:
 
+DAY 4 TASK 1 DOES NOT CURRENTLY WORK 
+
 In this challenge we had to determine whether a roll of wrapping paper was accessible or not based on whther the spots around it were free or not. The roll
 of wrapping paper can only be accessible if there are fewer than four rolls in the adjacent positions. 
 
@@ -36,4 +38,7 @@ The total is then printed.
 Maximising efficiency:
 
 To maximise the efficiency all I could do is remove the re module as it wan't used in the end.
+
+Task 2: 
+
 
