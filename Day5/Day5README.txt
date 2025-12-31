@@ -14,3 +14,4 @@ We then open the file "Day5Input.txt", a file comprimised of soley the fruits we
 but also converting it to an integer. 
 We create a set called "fresh" to house the results, we use a set because it doesn't allow duplicates. Ensuring there are no repititions.
 I then start a loop, looping through the numbers in between, defining a start value and an end value by splitting the between inputs at the hypen.
+The "for number in number:" loop goes through all the numbers and if the number is between the start and end value it gets added to the "fresh" set.
