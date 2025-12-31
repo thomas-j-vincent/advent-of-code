@@ -41,4 +41,12 @@ To maximise the efficiency all I could do is remove the re module as it wan't us
 
 Task 2: 
 
+In task two we have to loop the program, removing all prossible rolls of wrapping paper, counting the number we remove, substituting it for a . to simulate
+removing it, and then rerunning the program with the new grid.
+
+ Explaining the code top to bottom:
+
+The function "get_adjacent_positions" works in a similar way to the function from the first function, getting passed:
+ "r" (height index), "c" (width index) as well as the actual height and the width of the grid.
+
 
