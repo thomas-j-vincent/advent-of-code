@@ -1,7 +1,7 @@
 import re
 
 # --- Load Grid ---
-with open("AdventOfCodeDay4FormattedValues.txt", "r") as file:
+with open("Day4Input.txt", "r") as file:
     grid = [line.strip() for line in file]
 
 height = len(grid)

@@ -1,5 +1,5 @@
 import re
-with open("AdventOfCodeDay4FormattedValues.txt", "r") as file:
+with open("Day4Input.txt", "r") as file:
     lines = {index: line.strip() for index, line in enumerate(file, start=1)}
     # print(lines[137]) 137 x 137lines of grid
     gridLength = len(lines) + 1
