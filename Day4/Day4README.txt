@@ -16,3 +16,11 @@ row and each character in the string is a cell. This way we can determine both w
 row (by the strings index).
 We then store the height of the grid as the length of "grid" and the width as the length of each string.
 "Total", which keeps a running total of the amount of @'s found in a string, is also defined here.
+
+The function getAdjacent gets passed the height and width of the current cell being checked and constucts a list of the other cells around it.
+First the function creates a list called "directions" each entry tells the program how to go from the current height and width value
+(stored as r and c respectivley). The function then creates the "final" list, this stores the instructions of how to get to an adjacent cell from the current
+cell. The "for dr, dc in directions:" loop goes through the values in the directions and for each one adds the row value i.e. 3 with the instruction cell
+index i.e. -2. To get a useable position. The if statement is designed in the case that the cell being checked is near the edge or top of the grid, and if
+it isn't, it appends it to the "final" list
+This "final" list is then returned.

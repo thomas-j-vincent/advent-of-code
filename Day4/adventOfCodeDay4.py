@@ -7,22 +7,21 @@ height = len(grid)
 width = len(grid[0])
 total = 0
 
-# --- Get Adjacent Valid Cells ---
-def get_adjacent(r, c):
+def getAdjacent(r, c):
     directions = [
         (-1, -1), (-1, 0), (-1, 1),
         (0, -1),          (0, 1),
         (1, -1),  (1, 0), (1, 1)
     ]
 
-    adj = []
+    final = []
     for dr, dc in directions:
         nr, nc = r + dr, c + dc
-        # Only include valid coordinates
+        
         if 0 <= nr < height and 0 <= nc < width:
-            adj.append((nr, nc))
+            final.append((nr, nc))
 
-    return adj
+    return final
 
 # --- Main Loop ---
 for r in range(height):
@@ -31,7 +30,7 @@ for r in range(height):
         if grid[r][c] != "@":
             continue  # skip non-@ cells entirely
 
-        adjacent_cells = get_adjacent(r, c)
+        adjacent_cells = getAdjacent(r, c)
         total_at_signs = 0
 
         # Count '@' in adjacent positions
