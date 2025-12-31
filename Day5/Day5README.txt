@@ -35,4 +35,4 @@ end values to sum the total fresh IDs.
 As we only need the ranges in this program that is the only file we open. We define ranges as an empty list and for every line we split the ranges at the
 hypen, defining the values as variable start and end, we then append these values to ranges. Providing us with a list where every entry is two values, the
 start and the end for that line. We then sort the ranges list to get the highest and lowest values in order, helping us understand which values are repeated
-Using the merged list, we remove any duplicates. This is done by first creating a start and 
+Using the merged list, we remove any duplicates. This is done by first creating a start and end value from the current tuple (from ranges list)
