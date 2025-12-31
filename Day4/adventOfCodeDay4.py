@@ -1,6 +1,5 @@
-import re
+#import re
 
-# --- Load Grid ---
 with open("Day4Input.txt", "r") as file:
     grid = [line.strip() for line in file]
 
