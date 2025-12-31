@@ -57,6 +57,8 @@ We then open the file the same was as in the first program however, this time we
 directly. "height", "width", and "total_removed" are declared in the same way as in the first program. The "while: TRUE" intentionally loops until
 "to_remove" is empty. (whilst to_remove is empty at the start by the time the loop is finished there should be something in there)
 The while loops in much the same way as last time, looping through the height and width to cover every character, searching for @ and otherwise skipping
-that character.
+that character. We then find the adjacent characters, count them using the sum function and the results from "get_adjacent_positions". If the result from
+"count_adjacent_at" is greater than 4 we add it to the total and then append it to the "to_remove" list. We then include the break statement whereby if 
+"to_remove" is empty the loop ends. From there we loop through all the values in to_remove, replacing every value 
 
 
