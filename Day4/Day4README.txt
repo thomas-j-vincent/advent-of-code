@@ -59,6 +59,6 @@ directly. "height", "width", and "total_removed" are declared in the same way as
 The while loops in much the same way as last time, looping through the height and width to cover every character, searching for @ and otherwise skipping
 that character. We then find the adjacent characters, count them using the sum function and the results from "get_adjacent_positions". If the result from
 "count_adjacent_at" is greater than 4 we add it to the total and then append it to the "to_remove" list. We then include the break statement whereby if 
-"to_remove" is empty the loop ends. From there we loop through all the values in to_remove, replacing every value 
+"to_remove" is empty the loop ends. From there we loop through all the values in to_remove, replacing every value in the array with a ., allowing it to be used next loop. 
 
 
