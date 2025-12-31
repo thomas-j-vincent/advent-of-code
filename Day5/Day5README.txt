@@ -29,3 +29,7 @@ In task 2 we ignore the available ingredients and instead sum the number of fres
 Initially I intended to use the same method as the prior program however, just skip the comparison to the ingredients.
 As this method was very inefficient I instead decided to take the lowest and highest values of each line, subtract duplicates, and then use the start and
 end values to sum the total fresh IDs.
+
+ Explaining the code top to bottom:
+
+As we only need the ranges in this program that is the only file we open.
