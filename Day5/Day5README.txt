@@ -36,4 +36,5 @@ As we only need the ranges in this program that is the only file we open. We def
 hypen, defining the values as variable start and end, we then append these values to ranges. Providing us with a list where every entry is two values, the
 start and the end for that line. We then sort the ranges list to get the highest and lowest values in order, helping us understand which values are repeated
 Using the merged list, we remove any duplicates. This is done by first creating a start and end value from the tuple (from first value of ranges list)
-we then use the for loop to change check whether a value fits within these ranges, if it does it gets discarded. If not 
+we then use the for loop to change check whether a value fits within these ranges it gets merged and expands the current_start and current_end to fit this
+merge. If there is no overlap it starts a new range
