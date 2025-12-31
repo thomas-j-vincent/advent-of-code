@@ -23,23 +23,22 @@ def getAdjacent(r, c):
 
     return final
 
-# --- Main Loop ---
+
 for r in range(height):
     for c in range(width):
 
         if grid[r][c] != "@":
-            continue  # skip non-@ cells entirely
+            continue  # skip non-@ cells
 
-        adjacent_cells = getAdjacent(r, c)
-        total_at_signs = 0
+        adjacentCells = getAdjacent(r, c)
+        totalAtSigns = 0
 
-        # Count '@' in adjacent positions
-        for ar, ac in adjacent_cells:
+        for ar, ac in adjacentCells:
             if grid[ar][ac] == "@":
-                total_at_signs += 1
+                totalAtSigns += 1
 
         # Decide accessibility
-        if total_at_signs < 4:
+        if totalAtSigns < 4:
             print(f"({r},{c}) ACCESSIBLE")
             row = grid[r]
             grid[r] = row[:c] + "." + row[c+1:]

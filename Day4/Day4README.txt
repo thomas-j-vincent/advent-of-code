@@ -24,3 +24,7 @@ cell. The "for dr, dc in directions:" loop goes through the values in the direct
 index i.e. -2. To get a useable position. The if statement is designed in the case that the cell being checked is near the edge or top of the grid, and if
 it isn't, it appends it to the "final" list
 This "final" list is then returned.
+
+The main loop loops through both the height and width (cell by cell) and if the cell isnt an @ skips it. (as there is no paper to check if accessible)
+"adjactentCells" calls the function "getAdjacent" to return a list of all the cells adjacent to the current one that need to check if they are free or not.
+"totalAtSigns" is a running total of taken cells, if this reaches four or above the roll is deemed inaccessible. This is defined here out of the for loop.
