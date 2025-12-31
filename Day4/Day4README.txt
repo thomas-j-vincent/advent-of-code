@@ -14,3 +14,5 @@ We first import the re module, which is used to check whether a string contains 
 The next two lines open the input file, and define the grid as a list of strings (having removed the whitespace and the newline characters) each string is a
 row and each character in the string is a cell. This way we can determine both which row a character is (by the list index) and the cells index within the
 row (by the strings index).
+We then store the height of the grid as the length of "grid" and the width as the length of each string.
+"Total", which keeps a running total of the amount of @'s found in a string, is also defined here.
