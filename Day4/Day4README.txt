@@ -47,6 +47,10 @@ removing it, and then rerunning the program with the new grid.
  Explaining the code top to bottom:
 
 The function "get_adjacent_positions" works in a similar way to the function from the first function, getting passed:
- "r" (height index), "c" (width index) as well as the actual height and the width of the grid.
+"r" (height index), "c" (width index) as well as the actual height and the width of the grid. The function starts by declaring the "positions" list, this is
+where the indexes of the adjacent positions will be appended. The for loops go through the 8 adjacent positions (two for loops, one for x, one for y value)
+The if statement ensures that the centre cell is skipped, as this cell is not adjacent. "nr" and "nc" are then given the value of the adjacent character
+with the line "nr, nc = r + dr, c + dc". The if statement ensures that the adjacent value is a valid value before appending the value to the postions list.
+positions is then returned.  
 
 
