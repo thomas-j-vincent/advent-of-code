@@ -11,7 +11,7 @@ through the remaining numbers to find the second digit.
  Explaining the code top to bottom:
 
 I first open the Day3 Input file and write each line to the string "text", removing any whitespace with the .strip function.
-I then replace any linebreaks with commas by using the .replace function. This then overwrites the old text value.
+I then replace any line breaks with commas by using the .replace function. This then overwrites the old text value.
 Then I write the "text" string to the "numbers" list, splitting the values by the commas in between them. This creates a iterable list where each entry is
 a range to be iterated through.
 The running total is then defined as 0 so it can be counted without being reset accidentally.
@@ -57,6 +57,6 @@ The final total is then printed
 
 Maximising efficiency:
 
-In this code there wasn't many obvious ways to imporve the efficiency apart from converting "removes" from a calculation ("len(digits) - 12") to a set value
-as the length is always this same. I had initially wanted to remove the variable completley but it gradually gets subtracted through the loop, meaning a
+In this code there wasn't many obvious ways to improve the efficiency apart from converting "removes" from a calculation ("len(digits) - 12") to a set value
+as the length is always this same. I had initially wanted to remove the variable completely but it gradually gets subtracted through the loop, meaning a
 defined value would cause an error.

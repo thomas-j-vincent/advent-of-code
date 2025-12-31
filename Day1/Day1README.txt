@@ -18,14 +18,14 @@ The values from the "formatted" string is then moved into the numbers list, ensu
 I then stored the number that the program was currently at and defined it as 50 as that is where the brief said we were to start. 
 zeroOccurences is the value we are aiming to find and was also stored outside any for loops so it didn't accidentally reset during the code.
 
-The function isZero checks if the current number is zero and if it is it adds one to the Zero occurences variable we just defined, making sure to return the
+The function isZero checks if the current number is zero and if it is it adds one to the Zero occurrences variable we just defined, making sure to return the
 new value otherwise none of the other functions will be able to access it. It then prints the amount of zeroOccurrences by assigning it to a string so the 
 variable could be read (this is inefficient as by adding an f before the print message the same outcome is possible)
 instead of:  txtB = f" isZero, occurences: {zeroOccurences}" and then: print(txtB)  
 we could just do: print(f" isZero, occurences: {zeroOccurences}") as it only takes up one line
 
 The function isMaxOrMin creates the loop effect by subtracting 100 if the currentNumber is above 99 and adding 100 
-if the currentNumber is below 0. It then returns currentNumber and zero occurences so it can be updated globally. 
+if the currentNumber is below 0. It then returns currentNumber and zero occurrences so it can be updated globally. 
 (zeroOccurences is not required, this was left in when I was incorrectly testing zeroOccurences too often out of fear of missing one,
  this created false counts)
 

@@ -24,9 +24,9 @@ Here we enter another if statement looping through each number in the range
 for each number I first chose to remove any numbers that were not even in length
  (as there is no way a set of characters can repeat twice if the length is uneven)
 if the number is two characters long, i then check if the number can be divided by 11
- (as all twice repeating numbers in 2-character long number are divisable by 11)
+ (as all twice repeating numbers in 2-character long number are divisible by 11)
 
-from here we take the number of digits and half them, so as to discover how long the the start and end pattern should be. we then convert it to an integer
+from here we take the number of digits and half them, so as to discover how long the start and end pattern should be. we then convert it to an integer
 to find the minimum number that would pass the test, we take the length of the start section, put a one at the front, and fill the rest with zeros then 
 stitch the front and back section together.
 we then do the same but replace all the numbers with 9's, to get the largest possible number that would pass the test.
@@ -45,7 +45,7 @@ In the code you will see lines that are commented out, these are lines that were
 I did this by attempting to decrease the amount of loops or functions called, as loops slow down the program whilst it iterates through them.
 
 The first way I did this was to remove the check_odd_even function, instead choosing to use the modulus operator outside it. 
-I then removed the entire loop when checking if the number is divisable by 11, as we do that functionality later anyway.
+I then removed the entire loop when checking if the number is divisible by 11, as we do that functionality later anyway.
 I also removed the segment that checks is the values are above the minimum and below the maximum, as that we can just check each number individually
 Finally I skipped reassembling the halves as that value was the same as the "value" string from earlier which we use in the allMatch loop to add to the total.
 
@@ -59,22 +59,14 @@ In the second task I attempted to remove the for i in numbers for loop by creati
 This reduces the amount of loops the code has to go to and therefore speeds up the program, I attempted to do this with the previous task however,
 I structured the entire code around this loop, with no way to determine between start and end values from different ranges and therefore kept it the same.
 
-For the function generate_invalid_IDs I used the function from someones solution found on reddit (I can't find their name) but this is the way it works and
+For the function generate_invalid_IDs I used the function from someone's solution found on reddit (I can't find their name) but this is the way it works and
 how I optimised it for purpose of only solving the second task:
-The first line finds the total length of the highest number possible by taking the max_value (passed to the function), finding its lenght and then
-converting it to an integer. All the invalid numbers in the range are stored as a set so it can be passed back to the program to iterate through.this works
-better than my system as it means the program doesn't have to find all the invalid IDs each time, only once for each range (speeding up the program).They
-then enter a for loop to iterate through the length of the number, starting at the second value, as the first digit is used to compare against the others-
-it has to be valid. For each number length d is used to calculate possible repeating sections ie. for an eight digit number d would be 1, 2, 4. If a the
-length of the number has a remainder when divided by d, that d value is skipped as there can be no repeating sections for a number of that length
-ie. d=3 and L= 8, 8 cannot have repeating sections of 3. t is the amount of times the section has to repeat to fill the number of that length
-ie. if d=4 L=8 t=2. The if loop "if part 2 and t < 2:" was intended to ensure that the repeating section always repeats at least once, and can therefore be
-removed to increase the program speed. Start and End are then created as the highest and lowest possible numbers. From this range it loops through from the
-lowest number to the highest, taking the current value and multiplying it by the times it has to be repeated for that d value. If the number created from
-that function is greater than the maximum value it stops the loop, otherwise it adds the number to the invalid ID set.
+The first line finds the total length of the highest number possible by taking the max_value (passed to the function), finding its length and then
+converting it to an integer. All the invalid numbers in the range are stored as a set so it can be passed back to the program to iterate through. This works better than my system as it means the program doesn't have to find all the invalid IDs each time, only once for each range (speeding up the program).They then enter a for loop to iterate through the length of the number, starting at the second value, as the first digit is used to compare against the others-it has to be valid. For each number length d is used to calculate possible repeating sections ie. for an eight digit number d would be 1, 2, 4. If a the length of the number has a remainder when divided by d, that d value is skipped as there can be no repeating sections for a number of that length i.e. d=3 and L= 8, 8 cannot have repeating sections of 3. t is the amount of times the section has to repeat to fill the number of that length
+i.e. if d=4 L=8 t=2. The if loop "if part 2 and t < 2:" was intended to ensure that the repeating section always repeats at least once, and can therefore be removed to increase the program speed. Start and End are then created as the highest and lowest possible numbers. From this range it loops through from the lowest number to the highest, taking the current value and multiplying it by the times it has to be repeated for that d value. If the number created from that function is greater than the maximum value it stops the loop, otherwise it adds the number to the invalid ID set.
 This set is then returned.
 
-For the funtion solve_ranges I also used a solution found on reddit, this is how it works:
+For the function solve_ranges I also used a solution found on reddit, this is how it works:
 The first line finds the maximum value in each range, we then call the generate_invalid_IDs function to return the list of invalid IDs, total is then
 declared as zero, which will be added to find the ultimate answer. The for loop loops through the invalid IDs and for each number in the range as long is
 between the maximum and minimum for that function, gets added to the total. The loop is then broken out of to ensure there is no double counting.
