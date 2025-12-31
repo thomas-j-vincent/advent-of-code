@@ -24,3 +24,5 @@ There is no simple way to make this program more efficient.
 
 Task 2: 
 
+In task 2 we ignore the available ingredients and instead sum the number of fresh IDs
+
