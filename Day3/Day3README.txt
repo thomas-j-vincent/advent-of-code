@@ -51,4 +51,6 @@ I then define "removes" as the length of the line - 12 (the twelve characters we
 get appended. I then loop through the digits in "digits" and while there is at least one digit in "result", there are "removes" remaining and the last digit
 is smaller than the current digit I remove the current digit from the "result" list, and then I reduce the amount of "removes" left. This continues until
 there are no "removes" left. The remaining digits are then appended to "results". If for some reason there is still more than twelve digits in the result
-list, we then shorten the digits from the right. 
+list, we then shorten the digits from the right. The last four lines take the temporary result, convert them into one number using ".join" and then adds it 
+to a running total. 
+The final total is then printed
