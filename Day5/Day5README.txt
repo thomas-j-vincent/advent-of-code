@@ -21,3 +21,6 @@ This result is then printed.
 Maximising efficiency:
 
 There is no simple way to make this program more efficient.
+
+Task 2: 
+
