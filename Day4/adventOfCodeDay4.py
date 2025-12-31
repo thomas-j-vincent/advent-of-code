@@ -37,12 +37,9 @@ for r in range(height):
             if grid[ar][ac] == "@":
                 totalAtSigns += 1
 
-        # Decide accessibility
         if totalAtSigns < 4:
-            print(f"({r},{c}) ACCESSIBLE")
             row = grid[r]
             grid[r] = row[:c] + "." + row[c+1:]
             total += 1
-        else:
-            print(f"({r},{c}) NOT ACCESSIBLE")
+        
 print(total)

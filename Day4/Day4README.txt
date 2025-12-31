@@ -28,3 +28,12 @@ This "final" list is then returned.
 The main loop loops through both the height and width (cell by cell) and if the cell isnt an @ skips it. (as there is no paper to check if accessible)
 "adjactentCells" calls the function "getAdjacent" to return a list of all the cells adjacent to the current one that need to check if they are free or not.
 "totalAtSigns" is a running total of taken cells, if this reaches four or above the roll is deemed inaccessible. This is defined here out of the for loop.
+The "for ar, ac in adjacentCells:" loop loops through all the available adjacent cells, checking if they contain @ and if they do it adds one to the
+totalAtSigns. There is then a final is statement and if the totalAtSigns is less than 4 it replaces the @ sign with a . (simulating removal of that roll)
+and then it increments the total.
+The total is then printed.
+
+Maximising efficiency:
+
+To maximise the efficiency all I could do is remove the re module as it wan't used in the end.
+
