@@ -10,6 +10,6 @@ My idea was to create a list of valid ranges, then iterate through it with the n
 
 In the first two lines we open the file "Day5Range.txt", this is a file comprimised soley of the range portion of the input, created manually. we then map
 this to "between", removing any whitespace in the process.
-
 We then open the file "Day5Input.txt", a file comprimised of soley the fruits we need to test, we define this as numbers, removing whitespace in the process
 but also converting it to an integer. 
+We create a set called "fresh" to house the results, we use a set because it doesn't allow duplicates. Ensuring there are no repititions
