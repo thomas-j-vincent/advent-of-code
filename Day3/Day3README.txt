@@ -54,3 +54,9 @@ there are no "removes" left. The remaining digits are then appended to "results"
 list, we then shorten the digits from the right. The last four lines take the temporary result, convert them into one number using ".join" and then adds it 
 to a running total. 
 The final total is then printed
+
+Maximising efficiency:
+
+In this code there wasn't many obvious ways to imporve the efficiency apart from converting "removes" from a calculation ("len(digits) - 12") to a set value
+as the length is always this same. I had initially wanted to remove the variable completley but it gradually gets subtracted through the loop, meaning a
+defined value would cause an error.
