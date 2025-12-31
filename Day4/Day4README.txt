@@ -53,4 +53,7 @@ The if statement ensures that the centre cell is skipped, as this cell is not ad
 with the line "nr, nc = r + dr, c + dc". The if statement ensures that the adjacent value is a valid value before appending the value to the postions list.
 positions is then returned.  
 
+We then open the file the same was as in the first program however, this time we write to list using the list function which converts the input into a list
+directly. "height", "width", and "total_removed" are declared in the same way as in the first program. The "while: TRUE"
+
 

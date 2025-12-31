@@ -10,7 +10,6 @@ def get_adjacent_positions(r, c, height, width):
     return positions
 
 
-# Load the grid
 with open("Day4Input.txt") as f:
     grid = [list(line.strip()) for line in f]
 
