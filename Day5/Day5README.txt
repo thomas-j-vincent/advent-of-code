@@ -39,3 +39,4 @@ Using the merged list, we remove any duplicates. This is done by first creating 
 we then use the for loop to change check whether a value fits within these ranges it gets merged and expands the current_start and current_end to fit this
 merge. If there is no overlap it starts a new range. This then gets appended to the "ranges" list so that in the next iteration it too can be checked for
 overlap. At the end we sum the values in the start and end range, for the amount of seperate ranges there are. 
+This value is then printed
