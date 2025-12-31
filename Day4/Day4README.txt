@@ -65,6 +65,6 @@ The total is then increased and at the end of the loop is printed
 
 Maximising efficiency:
 
-There is no simple way to make this program more efficient
+There is no simple way to make this program more efficient.
 
 

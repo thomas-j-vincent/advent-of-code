@@ -17,3 +17,7 @@ I then start a loop, looping through the numbers in between, defining a start va
 The "for number in number:" loop goes through all the numbers and if the number is between the start and end value it gets added to the "fresh" set.
 At the end the length of the set is calculated using the .set() function.
 This result is then printed.
+
+Maximising efficiency:
+
+There is no simple way to make this program more efficient.
