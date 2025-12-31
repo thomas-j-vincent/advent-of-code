@@ -8,3 +8,4 @@ My idea was to create a list of valid ranges, then iterate through it with the n
 
  Explaining the code top to bottom:
 
+In the first two lines we open 
