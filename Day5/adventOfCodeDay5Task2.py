@@ -1,5 +1,5 @@
 # Load ranges
-with open("AdventOfCodeDay5Range.txt") as f:
+with open("Day5Range.txt") as f:
     ranges = []
     for line in f:
         start, end = map(int, line.strip().split("-"))
