@@ -8,4 +8,5 @@ My idea was to create a list of valid ranges, then iterate through it with the n
 
  Explaining the code top to bottom:
 
-In the first two lines we open 
+In the first two lines we open the file "Day5Range.txt", this is a file comprimised soley of the range portion of the input, created manually. we then map
+this to "between", removing any whitespace in the process
