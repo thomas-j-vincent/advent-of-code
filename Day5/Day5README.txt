@@ -32,4 +32,6 @@ end values to sum the total fresh IDs.
 
  Explaining the code top to bottom:
 
-As we only need the ranges in this program that is the only file we open.
+As we only need the ranges in this program that is the only file we open. We define ranges as an empty list and for every line we split the ranges at the
+hypen, defining the values as variable start and end, we then append these values to ranges. Providing us with a list where every entry is two values, the
+start and the end for that line. 

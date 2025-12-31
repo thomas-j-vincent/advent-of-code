@@ -4,6 +4,7 @@ with open("Day5Range.txt") as f:
     for line in f:
         start, end = map(int, line.strip().split("-"))
         ranges.append((start, end))
+        print(ranges)
 
 # Step 1: sort by starting value
 ranges.sort()
