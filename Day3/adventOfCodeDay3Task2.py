@@ -8,9 +8,10 @@ total = 0
 
 for i in numbers:
     digits = [int(ch) for ch in str(i)]
-    removes = len(digits) - 12
+    removes = 88  #len(digits) - 12
 
     result = []
+    print(result)
 
     for d in digits:
         while result and removes > 0 and result[-1] < d:

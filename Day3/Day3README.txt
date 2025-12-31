@@ -43,3 +43,11 @@ In task two instead of the largest combination of two digits we need to find the
 My first idea was to repeat the loop used for finding the first two values another ten times, making up the other digits however, this would've been very
 slow so I chose another method. Instead I chose to put all of the characters from a line into a list, determine the amount I have to remove, and then
 whilst the previous number is larger than the current number it removes the current number to end up with the largest possible twelve digit number.
+
+ Explaining the code top to bottom:
+
+The first 9 lines are the same from the previous program however once in the for loop we define "digits" as a each character in each line.
+I then define "removes" as the length of the line - 12 (the twelve characters we have to keep) we then declare our list "result" which is where the results
+get appended. I then loop through the digits in "digits" and while there is at least one digit in "result", there are "removes" remaining and the last digit
+is smaller than the current digit I remove the current digit from the "result" list, and then I reduce the amount of "removes" left. This continues until
+there are no "removes" left. The remaining digits are then appended 
