@@ -55,6 +55,6 @@ positions is then returned.
 
 We then open the file the same was as in the first program however, this time we write to list using the list function which converts the input into a list
 directly. "height", "width", and "total_removed" are declared in the same way as in the first program. The "while: TRUE" intentionally loops until
-"to_remove" is empty
+"to_remove" is empty. (whilst to_remove is empty at the start by the time the loop is finished there should be something in there)
 
 
