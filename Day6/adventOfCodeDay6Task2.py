@@ -1,15 +1,15 @@
 #!/bin/python3
 
-import sys
+#import sys
 from typing import List
 
-sys.setrecursionlimit(100000)
-FILE = sys.argv[1] if len(sys.argv) > 1 else "AdventOfCodeDay6FormattedValues.txt"
+#sys.setrecursionlimit(100000)
+#FILE = sys.argv[1] if len(sys.argv) > 1 else "Day6Input.txt"
+file = "Day6Input.txt"
 
-
-def read_lines_to_list() -> List[str]:
+def linesToList() -> List[str]:
     lines: List[str] = []
-    with open(FILE, "r", encoding="utf-8") as f:
+    with open(file, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip("\n")
             # lines.append(list(line)) # Change the return to Line[Line[str]]
@@ -18,43 +18,8 @@ def read_lines_to_list() -> List[str]:
 
     return lines
 
-
-def part_one():
-    lines = read_lines_to_list()
-    answer = 0
-
-    values: List[List[int]] = []
-    operations = []
-
-    for line in lines:
-        s = line.split()
-        if s[0].isdigit():
-            for i in range(len(s)):
-                if len(values) < i + 1:
-                    values.append([s[i]])
-                else:
-                    values[i].append(s[i])
-        else:
-            operations = s
-
-    for vs, op in zip(values, operations):
-        result = 0
-
-        if op == "*":
-            result = 1
-            for v in vs:
-                result *= int(v)
-        else:
-            for v in vs:
-                result += int(v)
-
-        answer += result
-
-    print(f"Part 1: {answer}")
-
-
-def part_two():
-    lines = read_lines_to_list()
+def partTwo():
+    lines = linesToList()
     answer = 0
 
     problems: List[List[int]] = []
@@ -102,6 +67,4 @@ def part_two():
 
     print(f"Part 2: {answer}")
 
-
-part_one()
-part_two()
+partTwo()
