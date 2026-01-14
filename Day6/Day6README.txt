@@ -40,4 +40,16 @@ We then open the file declared above (using with to ensure the file is automatic
 characters and appends the line to a string called lines. 
 Lines is then returned from the function.
 
-The function "part
+The function "partTwo" first calles the function "linesToList" gives the value to "lines". A final variable "answer" is then declared as 0, allowing it to be
+increased as the file progresses. "problems" is a list of the numbers that need to be added or multiplied for each solution, "operations" is another list
+which stores the operators for the paticular problem. "operations" is given the value of the last line of the file and is stored in a list. "digitLines" then
+takes all the lines (except the last line) as vertically aligned digits. The length of each of these lines is stored in "lineLength". "problem" is an empty
+list created to hold the numbers of a singular problem. The for loop loops through all the numbers in the line length, first declaring a value integer, as well
+as a boolean flag to detect empty columns. There is then another for loop that loops through each row at the current column and if it is a digit creates a number
+from the vertically aligned characters. The flag allSpaces is set to Flase -signalling that the column contains data- if it were empty we end the problem
+and start a new one, otherwise we add the number to the current problem, and then add that to the larger problems loop. We then loop over each problem and its
+corresponding operator, setting the result as zero and if the operator is "*" we multiply them, setting the result to 1 first (as 0 * x = 0) otherwise we
+add them. The result is then added to the answer. 
+The answer is then printed
+
+The program then calls the function.

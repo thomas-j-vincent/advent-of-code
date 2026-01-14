@@ -28,22 +28,22 @@ def partTwo():
     # Alright I'm manually parsing it. First let's scrape the operations.
     operations = lines[-1].split()
 
-    digit_lines = lines[:-1]
+    digitLines = lines[:-1]
 
-    line_length = max(len(l) for l in digit_lines)
+    lineLength = max(len(l) for l in digitLines)
 
     problem = []
-    for i in range(line_length):
+    for i in range(lineLength):
         value = 0
 
-        all_spaces = True
-        for line in digit_lines:
+        allSpaces = True
+        for line in digitLines:
             if line[i].isdigit():
                 value *= 10
                 value += int(line[i])
-                all_spaces = False
+                allSpaces = False
 
-        if all_spaces:
+        if allSpaces:
             problems.append(problem)
             problem = []
         else:
