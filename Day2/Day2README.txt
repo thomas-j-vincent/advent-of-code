@@ -77,4 +77,5 @@ The answer is then printed.
 Maximising efficiency:
 
 The code given was initially to solve both the first and second task, as that was not required I first removed where the part2 argument was passed, and
-defaulted it to true. I also removed the "if part2 and t < 2:" loop as part true is always true as is t < 2. 
+defaulted it to true. I also removed the "if part2 and t < 2:" loop as part true is always true as is t < 2. I then removed any dead code and other
+functions such as sys that werent required.
