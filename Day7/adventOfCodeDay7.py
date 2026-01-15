@@ -1,38 +1,25 @@
-import re
+from collections import deque
 with open("Day7Input.txt", "r") as f:
-    lines = [line.strip() for line in f]
+    grid = [line.strip() for line in f]
+S = [(r, c) for r,row in enumerate(grid) for c, char in enumerate(row) if char == "S"][0]
+beams = deque([S])
+seen = {S}
 
-txt=(lines[0])
-#print(txt)
-x=re.search("S",txt)
-txt = str([x.span()[0]])
-txt= int(txt.strip("[]")) #the column containing s
+def add(r,c):
+    if (r,c) in seen: return
+    seen.add((r, c))
+    beams.append((r, c))
 
-for i in range(1, len(lines)): #loops through the lines
-    value = lines[i]  # prints a line
-   # print(i) # prints a column
-    index = 0 # index of the ii loop
-    if value[txt] == ".":
-        row = list(value)        # convert string → list
-        row[txt] = "|"           # replace the . with |
-     #   print(lines[i])
-    elif value[txt] == "^":
-        row = list(value)
-        if txt-1 >=0:
-            row[txt - 1] = "|"
-        row[txt]
+count = 0
 
-        if txt+1 < len(row):
-            row[txt+1] = "|"
+while len(beams) > 0:
+    r, c = beams.popleft()
+    if grid[r][c] == "." or grid[r][c] == "S":
+        if r == len(grid) - 1: continue
+        add(r + 1, c)
+    elif grid[r][c] == "^":
+        count +=1
+        add(r,c -1)
+        add(r, c +1)
 
-    lines[i] = "".join(row)
-    print(lines[i])
-
-    for ii in lines[i]: #ii is the character value not the index of that character
-        index += len(ii)
-    #    print(index)
-        #previousRow = i-1
-        #character = str(lines[i][int(ii)])
-        #print(character)
-        #if lines[previousRow][ii] == "|":
-         #   print("lineabove")
+print(count)
