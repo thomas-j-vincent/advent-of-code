@@ -1,5 +1,5 @@
 from functools import cache
-with open("AdventOfCodeDay7FormattedValues.txt", "r") as f:
+with open("Day7Input.txt", "r") as f:
     grid = [line.strip() for line in f]
 S = [(r, c) for r,row in enumerate(grid) for c, char in enumerate(row) if char == "S"][0]
 

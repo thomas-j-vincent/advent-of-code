@@ -1,5 +1,5 @@
 import re
-with open("AdventOfCodeDay7FormattedValues.txt", "r") as f:
+with open("Day7Input.txt", "r") as f:
     lines = [line.strip() for line in f]
 
 txt=(lines[0])
