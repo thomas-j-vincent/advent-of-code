@@ -1,6 +1,6 @@
 import math
 
-with open("Day8InputtedValues.txt", "r") as file:
+with open("Day8Input.txt", "r") as file:
 
     boxes = [list(map(int, line.split(","))) for line in file]
     edges = [(i, j) for i in range(len(boxes)) for j in range(i + 1, len(boxes))]
