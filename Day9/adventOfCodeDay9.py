@@ -7,9 +7,7 @@ class day_09:
         
     def open_and_store(self):
         
-        self.path = 'C:\\Users\\thoma\\OneDrive\\Documents\\GitHub\\adventOfCode\\Day9\\day9Input.txt'
-        
-        with open(self.path, 'r') as file:
+        with open("Day7Input.txt", 'r') as file:
             for row in file:
                 row = list(str(row.replace('\n', '')).split(','))
                 row = [ int(i) for i in row ]
