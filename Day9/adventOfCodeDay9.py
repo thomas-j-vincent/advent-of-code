@@ -7,7 +7,7 @@ class day_09:
         
     def open_and_store(self):
         
-        self.path = 'C:\\Users\\thoma\\OneDrive\\Documents\\GitHub\\adventOfCode\\day9inputtedvalues.txt'
+        self.path = 'C:\\Users\\thoma\\OneDrive\\Documents\\GitHub\\adventOfCode\\Day9\\day9Input.txt'
         
         with open(self.path, 'r') as file:
             for row in file:

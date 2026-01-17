@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 
-D9 = pd.read_csv('day9inputtedvalues.txt', header=None)
+D9 = pd.read_csv('day9Input.txt', header=None)
 
 unique = np.unique(D9[[0, 1]])
 factors = np.arange(len(unique))
