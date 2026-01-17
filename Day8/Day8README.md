@@ -26,3 +26,17 @@ We then merge the first 1000 shortest connections by cutting off the edges list 
 As the root function goes up one layer at a time, this could lead to long processing times if we end up with a massive tree. To solve this we use path compression so that we do not have to go through many "branches" to get to the parent, essentially making the tree linear. This is done in the line ``parent[x] = root(parent[x])``. This also impacts the merging as we do not want to move a merged tree to a child of the descendent of the parent, we want to make it the root of the second tree (``parent[root(a)] = root(b)`` **not** ``parent[root(a)] = b``). Finally we ***could*** find the deepest tree, and put the shallower tree a child of the deeper issue however, we do not do this as path compression already *mostly* solves this problem. 
 
 ## Task 2: ##
+
+In part two we need to carry on going until we have connected all of the junction boxes, and once they are all connected we take the last two junction boxes that we connected. And then multiply them.
+
+ ### Explaining the code top to bottom:###
+
+The code is very similar to the last program we used however, instead of looping through the first 1000 shortest connections.
+To identify when we are done we create a circuit variable, that is initially just the length of boxes
+each time we check if the root of each circuit is equal to the root of the second circuit, as if they are equal they are already in the same circuit and the merge function can be skipped. If they are not in the same function we merge together and decrease the number of circuits by one (as we have turned two connections into one)
+We continue this loop until the number of circuits is 1 at which point we print the result of x coordinate box a * x coordinate box b. 
+we then break out of the loop.
+
+### Maximising efficiency: ###
+
+There are no optimisations for the second code.
