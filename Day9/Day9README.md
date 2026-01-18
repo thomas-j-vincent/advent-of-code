@@ -19,3 +19,15 @@ The ``def open_and_store(self):`` function is used to open the data from the inp
 In the function ``def find_biggest_area(self):`` We take all the coordinates and calculating the area for the rectangles for each of these coordinates, this value is then stored in the ``self.max_area`` and is compared against future areas to find the overall largest. This then updates the object variable.
 
 The ``main() -> none:`` function runs the previous functions to return the program output. The ``-> none:`` is an optional type hint that shows that the function does not return anything. Inside the function the "day09" class is created and initialised, in turn creating the "max_area" and "coords" variables. It then loads in the data with ``day.open_and_store()`` and finally runs ``find_biggest_area`` to return the largest area from the coordinates. The largest area is then returned.
+
+The last two lines are important for when importing the file, although it does not matter much in my case, they ensure that when the file is imported into another file none of the file is run. 
+
+### Maximising efficiency: ###
+
+As the code was based on an another developers existing solution some of the parts included are not relevant to my use case or could be improved in other ways, the first improvement I made was in ``def find_biggest_area(self):`` where, instead of starting the second loop from the first value I started it from the "i" value, this reduces duplicates and self comparisons to make a more accurate program. 
+``` python
+        #for i in range(len(self.coords)):
+            #for j in range(1,len(self.coords)):
+        for i in range(len(self.coords)):
+            for j in range(i + 1, len(self.coords)):
+```

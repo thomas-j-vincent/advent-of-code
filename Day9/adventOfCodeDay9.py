@@ -7,7 +7,7 @@ class day_09:
         
     def open_and_store(self):
         
-        with open("Day7Input.txt", 'r') as file:
+        with open("Day9Input.txt", 'r') as file:
             for row in file:
                 row = list(str(row.replace('\n', '')).split(','))
                 row = [ int(i) for i in row ]
@@ -22,8 +22,10 @@ class day_09:
     
     def find_biggest_area(self):
         
+        #for i in range(len(self.coords)):
+            #for j in range(1,len(self.coords)):
         for i in range(len(self.coords)):
-            for j in range(1,len(self.coords)):
+            for j in range(i + 1, len(self.coords)):
 
                 if self.max_area < self.calc_area(self.coords[i],self.coords[j]):
                     self.max_area = self.calc_area(self.coords[i],self.coords[j])
