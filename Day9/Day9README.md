@@ -15,3 +15,5 @@ The `` __init__(self):`` function runs automatically when we create the day9 obj
 The ``def open_and_store(self):`` function is used to open the data from the input file, reading the coordinate pairs by row, replacing the newline characters with blankspace. It then turns each of these values into integers so they can be treated as numbers rather than strings.
 
 ``def calc_area(self,a,b):`` Calculates the area of the rectangle from the points a and b, first it finds the horizontal distance by taking the b value and subtract it from the a value. The same is done for the vertical height. These two values are then multiplied to form the area of the rectangle.
+
+In the function ``def find_biggest_area(self):`` We take all the coordinates and calculating the area for the rectangles for each of these coordinates, this value is then stored in the ``self.max_area`` and is compared against future areas to find the overall largest. This then updates the object variable.
