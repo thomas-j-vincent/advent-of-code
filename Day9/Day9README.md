@@ -31,3 +31,4 @@ As the code was based on an another developers existing solution some of the par
         for i in range(len(self.coords)):
             for j in range(i + 1, len(self.coords)):
 ```
+Another improvement I made was to 

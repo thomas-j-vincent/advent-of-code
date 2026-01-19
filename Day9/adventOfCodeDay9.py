@@ -30,13 +30,17 @@ class day_09:
                 if self.max_area < self.calc_area(self.coords[i],self.coords[j]):
                     self.max_area = self.calc_area(self.coords[i],self.coords[j])
                 
-def main() -> None:
-    
+#def main() -> None:
+def main():    
     day = day_09()
     day.open_and_store()
     day.find_biggest_area()
 
-    print(f'Max area: {day.max_area}')
+    #print(f'Max area: {day.max_area}')
 
-if __name__ == "__main__":
-    main()
+    return day.max_area
+
+#if __name__ == "__main__":
+ #   main()
+result = main()
+print(f"Max area: {result}")
