@@ -31,4 +31,4 @@ As the code was based on an another developers existing solution some of the par
         for i in range(len(self.coords)):
             for j in range(i + 1, len(self.coords)):
 ```
-Another improvement I made was to 
+Another improvement I made was to remove the last line that means when the code is imported it doesn't run- I removed this as I will not be importing it anywhere, this required a bit of tweaking as it wouldn't work without first ensuring the function returned something.
