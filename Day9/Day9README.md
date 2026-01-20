@@ -37,4 +37,7 @@ Another improvement I made was to remove the last line that means when the code 
 
 For part two the challenge is made slightly more difficult by only allowing red or green tiles to be switched out. Red tiles are connected to each other by a line of green tiles, wrapping over lines. Within these sections all the tiles are either red or green. Now, any rectangle has to have red tiles in the corners- ***and*** be filled with only green or red tiles.
 
+The plan of attack for this code was to first build a compact matrix representing the entire space using coordinate compression, then slice out all possible rectangular regions and check whether they contain the valid characters.
+
  ### Explaining the code top to bottom:###
+
