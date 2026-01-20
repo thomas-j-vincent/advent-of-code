@@ -41,3 +41,4 @@ The plan of attack for this code was to first build a compact matrix representin
 
  ### Explaining the code top to bottom:###
 
+The first lines we use are to import the required modules for this code to
