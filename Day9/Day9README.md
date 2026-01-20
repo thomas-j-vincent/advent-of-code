@@ -32,3 +32,9 @@ As the code was based on an another developers existing solution some of the par
             for j in range(i + 1, len(self.coords)):
 ```
 Another improvement I made was to remove the last line that means when the code is imported it doesn't run- I removed this as I will not be importing it anywhere, this required a bit of tweaking as it wouldn't work without first ensuring the function returned something.
+
+## Task 2: ##
+
+For part two the challenge is made slightly more difficult by only allowing red or green tiles to be switched out. Red tiles are connected to each other by a line of green tiles, wrapping over lines. Within these sections all the tiles are either red or green. Now, any rectangle has to have red tiles in the corners- ***and*** be filled with only green or red tiles.
+
+ ### Explaining the code top to bottom:###
