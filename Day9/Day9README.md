@@ -59,3 +59,28 @@ We use these values to create a single grid containing all the values and using 
 for i in range(len(D9)):
     s[y[i]][x[i]] = 1
 ```
+
+Having got a grid of all list values (from the input) we then have to mark the edges between them to *draw* the rectangles. This is done in many loops, it goes through each line and; if two values are aligned on the x axis it *draws* a line between them, same on the y axis. 
+```python
+for i in range(len(D9)):
+    for j in range(len(D9)):
+        if i != j:
+            if x[i] == x[j]:
+                for k in range(y[i], y[j]+1):
+                    s[k][x[i]] = 1
+            if y[i] == y[j]:
+                for k in range(x[i], x[j]+1):
+                    s[y[i]][k] = 1
+```
+We then use scanline fill to find all the borders, and if there are atleast two we assume the space between them is a shape. filling them and turning the outline into a filled rectangle.
+``` python 
+for i in range(len(s)):
+    border = []
+    for j in range(s.shape[1]):
+        if s[i][j] != 0:
+            border.append(j)
+    if len(border) >= 2:
+        for j in range(min(border), max(border) + 1):
+            if s[i][j] == 0:
+                s[i][j] = 1
+```
