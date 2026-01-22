@@ -53,7 +53,7 @@ for i in range(len(D9)):
 
 m = sorted(m, key=lambda x:x[-1], reverse = True)
 
-p1 = max(m[:][4])
+#p1 = max(m[:][4])
 
 for i in range(len(m)):
     r = [row[m[i][0]:m[i][2]+1] for row in s[m[i][1]:m[i][3]+1]]
@@ -63,4 +63,5 @@ for i in range(len(m)):
         p2 = m[i][4]
         break
 
-print(p1,p2)
+#print(p1,p2)
+print(p2)

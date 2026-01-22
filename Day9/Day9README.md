@@ -84,3 +84,24 @@ for i in range(len(s)):
             if s[i][j] == 0:
                 s[i][j] = 1
 ```
+To generate all possible rectangles we loop through all values in D9 and uses the biggest values and assigns them to x2 and y2, and the minimum values for x1 and y1. If any either x1 and x2 or y1 and y2 are equal we skip this value - as this is not a rectangle.
+
+we then use this line to calculate the actual area of the rectangle, using `unique[x2]` to uncompress the previously compressed coordinates.
+
+These are then sorted, into largest first, and then getting incrementally smaller.
+
+To check that these rectangles are full we loop through, checking for 0 - if present there is a gap and the rectangle is invalid.
+``` python 
+for i in range(len(m)):
+    r = [row[m[i][0]:m[i][2]+1] for row in s[m[i][1]:m[i][3]+1]]
+    if any(0 in j for j in r):
+        continue
+    else:
+        p2 = m[i][4]
+        break
+```
+We then print the largest value.
+
+### Maximising efficiency: ###
+
+The code solution adapted for this task had originally also been used to solve task 1, this meant that some of the school of thought wasn't adapted for efficiency - such as removing invalid rectangles sooner to avoid processing them for as long. 
