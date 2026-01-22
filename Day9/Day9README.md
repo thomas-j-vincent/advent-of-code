@@ -41,5 +41,21 @@ The plan of attack for this code was to first build a compact matrix representin
 
  ### Explaining the code top to bottom:###
 
-The first lines we use are to import the required modules for this code to work, we use pandas to read the file and numpy to do specific maths functions such as...
+The first lines we use are to import the required modules for this code to work, we use pandas to read the file and numpy to do number formatting.
 
+It then reads the input and stores it as a pandas dataframe, where D9[0] is all the x values and D9[1] are all the y values.
+
+In these lines we then compress the coordinates, this is done by using numpy to exchange the (often large) coordinate values into different, smaller, integers that keep their relative sizes. This reduces the size of the coordinate grid used but still allows the area to be calculated.
+```python
+unique = np.unique(D9[[0, 1]])
+factors = np.arange(len(unique))
+
+D9[[0, 1]] = D9[[0, 1]].replace(unique, factors)
+```
+As standard lists are quicker to access and ammend than pandas dataframes we then store all the x and y values in seperate lists as we do not need the specialist functionality of the dataframe anymore.
+
+We use these values to create a single grid containing all the values and using `np.zeros` we can fill the grid with zeros, except if it is filled - in that case it is a one value. We mark each coordinate in the input as filled in the grid - using:
+``` python
+for i in range(len(D9)):
+    s[y[i]][x[i]] = 1
+```
