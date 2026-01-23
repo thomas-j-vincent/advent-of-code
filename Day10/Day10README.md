@@ -8,7 +8,9 @@ This solution uses sets of indices to simulate the lights, as the program optimi
 
  ### Explaining the code top to bottom:###
 
-We start by creating a "total" variable, outside any loops so that it could track the number of steps required to achieve the all lights on
+We start by creating a "total" variable, outside any loops so that it could track the number of steps required to achieve the all lights on. 
+
+We start by creating a loop that reads line by line- and then re
 
 ### Maximising efficiency: ###
 
