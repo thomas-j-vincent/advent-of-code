@@ -14,8 +14,18 @@ We start by creating a loop that reads line by line- and then removing the white
 These captures are then stored as variables: target, buttons, and then _ (to disregard the value).
 The next line converts the stored characters into values, where the "#" keys are stored as numbers, telling the program that these indexes need to be turned on - therefore making comparisons very easy.
 The next line also converts "buttons" into sets; first it splits on spaces, converting a single string into two values of a list; then we remove the square brackets associated with a list with ` button[1:-1]`; these values then get split on the commas - so we get two lists, containing the individual characters. `map(int, ...)` converts the strings into integers and then `set(...)` transforms these lists into a set of the light indices - so they can be compared later.
+`for count in range(1, len(buttons) + 1):` loops through the number of buttons up to the whole number, the next line uses itertools to generate a combination of buttons to "press" that would turn on the lights. For example for a count value of 2 this would be the the buttons that are pressed:
+ ```python
+(buttons[0], buttons[1])
+(buttons[0], buttons[2])
+(buttons[1], buttons[2])
+```
+`lights = set()` is the line that actually simulates the buttons being pressed
+The "^=" operator in the next loop is called a symmetric difference and makes the value act as a toggle, therefore modelling the button presses where lights is the value of which light is on and buttons is the index of the buttons that need to be switched.
+`if lights == target:` compares the current light value to the intended value - and if all the lights are on it sets the total as the number of button presses that were required and then breaks out of both loops. This allows the program to move onto the next line. 
 
-`for count in range(1, len(buttons) + 1):` loops through the number of buttons up to the whole number 
+Once all lines have been calculated the total is printed.
+
 ### Maximising efficiency: ###
 
 ## Task 2: ##
