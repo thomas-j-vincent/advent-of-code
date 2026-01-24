@@ -28,6 +28,8 @@ Once all lines have been calculated the total is printed.
 
 ### Maximising efficiency: ###
 
+As the code starts from the fewest number of button presses it is already as efficient as it can be. Although there are lots of loops I cannot currently think of a way to remove these loops unless there was some way to store all the different combinations of button presses - but even if there were there would be no way to "guess" their impact on the lights so this would have to be individually calculated anyway.
+
 ## Task 2: ##
 
  ### Explaining the code top to bottom:###
