@@ -38,4 +38,8 @@ This code first generates all the different button press combinations, and then 
 
  ### Explaining the code top to bottom:###
 
+First we import the required functions: collections (used to create dictionaries and detect the parity of the buttons, whether they are odd or even), functools (caches function calls) and itertools (generates all possible combiantions of button presses)
+
+The function `def powerset(s):` generates every possible subset of s, at size r - s comes from the buttons variable (from the file).
+
 ### Maximising efficiency: ###
