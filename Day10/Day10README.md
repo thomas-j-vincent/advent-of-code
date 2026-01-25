@@ -34,7 +34,7 @@ As the code starts from the fewest number of button presses it is already as eff
 
 In task two, instead of attempting to turn on the lights we use the buttons to set numeric counters to a specific joltage value that shows the correct joltage is being recieved. All these counters are initially set to zero and the last set of numbers dictates what values each counter needs to end up at.
 
-
+This code first generates all the different button press combinations, and then detects which buttons were pressed an odd number of times - this allows it to only focus on buttons that make a difference to the actual light output.
 
  ### Explaining the code top to bottom:###
 
