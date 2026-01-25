@@ -42,4 +42,16 @@ First we import the required functions: collections (used to create dictionaries
 
 The function `def powerset(s):` generates every possible subset of s, at size r - s comes from the buttons variable (from the file).
 
+The function `def solve(line):` determines how which buttons and how often they need to be pressed to get the required output. It first takes the line from the file and sets the inputs as variables: lights, *buttons (the * means that everything in the middle is part of the buttons variable), demands using `line.split()` to split the lines at the spaces and `g[1:-1]` to remove the brackets off the start and end of all of the variables. at the end of this line the variables will have values such as this:
+```python
+lights  = "#.#."
+buttons = ["0,2", "1,3"]
+demands = "2,1,0,3"
+```
+Lights then gets converted to a tuple so that every "#" mark is a true, and every "." is a false
+Buttons becomes a set containing the affected buttons by index so instead of `["0,2", "1,3"] it is {0,2} {1,3}
+Demands then turns into a list of integers so the numbers can be properly accessed in the correct format.
+This line `options, output = collections.defaultdict(list), dict()` is part of the program designed to precompute all the button combinations - in paticular it groups the buttons by their true or fals value (stored as options) and output which stores the exact supply values. 
+The for loop loops over for the amount of buttons there are in the paticular line. For each of these lines "supply" is which buttons are affected by the button, this then gets turned into parity (removes any even numbers so the values are either 0- for unaffected- or 1 - for toggled)
+
 ### Maximising efficiency: ###
