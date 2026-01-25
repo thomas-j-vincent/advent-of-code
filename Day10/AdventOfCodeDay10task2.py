@@ -15,7 +15,7 @@ def solve(line):
     options, output = collections.defaultdict(list), dict()
     for pressed in powerset(range(len(buttons))):
         supply = [len([1 for b in pressed if j in buttons[b]])
-                         for j in range(len(demands))]
+                        for j in range(len(demands))]
         parity = tuple(j%2 for j in supply)
 
         options[parity] += [pressed]

@@ -32,6 +32,10 @@ As the code starts from the fewest number of button presses it is already as eff
 
 ## Task 2: ##
 
+In task two, instead of attempting to turn on the lights we use the buttons to set numeric counters to a specific joltage value that shows the correct joltage is being recieved. All these counters are initially set to zero and the last set of numbers dictates what values each counter needs to end up at.
+
+
+
  ### Explaining the code top to bottom:###
 
 ### Maximising efficiency: ###
