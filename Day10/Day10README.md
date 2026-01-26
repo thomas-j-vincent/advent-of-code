@@ -54,5 +54,7 @@ Demands then turns into a list of integers so the numbers can be properly access
 This line `options, output = collections.defaultdict(list), dict()` is part of the program designed to precompute all the button combinations - in paticular it groups the buttons by their true or fals value (stored as options) and output which stores the exact supply values. 
 The for loop loops over for the amount of buttons there are in the paticular line. For each of these lines "supply" is which buttons are affected by the button, this then gets turned into parity (removes any even numbers so the values are either 0- for unaffected- or 1 - for toggled)
 The next line ensures that the parity can be stored so that it can be referred back to without having to be recalculated. 
+The next function `def opt(demands):` is nested in the `@functools.cache` wrapper, this means that if `
+The next function `def opt(demands):` is nested in the `@functools.cache` wrapper, this means that if `opt((2,4,6))` is called again then the answer doesn't need to be recalculated and is instead "remembered" by the computer.
 
 ### Maximising efficiency: ###
