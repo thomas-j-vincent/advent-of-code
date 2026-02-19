@@ -1,6 +1,6 @@
 import re
 
-with open("Day12InputValues.txt", "r") as file:
+with open("Day12Input.txt", "r") as file:
     lines = file.read().split("\n\n")[-1].splitlines()
 
 total = 0
