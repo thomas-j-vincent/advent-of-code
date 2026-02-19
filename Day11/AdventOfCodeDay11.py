@@ -1,7 +1,7 @@
 from functools import cache 
 graph = {}
 
-with open("Day11InputtedValues.txt", "r") as file:
+with open("Day11Input.txt", "r") as file:
     for line in file:
         src, dsts = line.strip().split(": ")
         graph[src] = dsts.split()
